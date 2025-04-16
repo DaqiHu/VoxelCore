@@ -156,7 +156,9 @@ TVoxelOptional<FMaterialAttributesInput> FVoxelMaterialGenerator::CopyExpression
 	};
 
 	// Need to add new properties below
-	checkStatic(MP_MAX == 35);
+	// MooaToon changes by Danta1ion
+	checkStatic(MP_MAX == 35 + 5);
+	// End MooaToon changes
 
 	Attributes.BaseColor = Traverse(OldMaterial.GetEditorOnlyData()->BaseColor);
 	Attributes.Metallic = Traverse(OldMaterial.GetEditorOnlyData()->Metallic);
@@ -176,6 +178,14 @@ TVoxelOptional<FMaterialAttributesInput> FVoxelMaterialGenerator::CopyExpression
 	Attributes.Refraction = Traverse(OldMaterial.GetEditorOnlyData()->Refraction);
 	Attributes.PixelDepthOffset = Traverse(OldMaterial.GetEditorOnlyData()->PixelDepthOffset);
 	Attributes.Displacement = Traverse(OldMaterial.GetEditorOnlyData()->Displacement);
+
+	// MooaToon changes by Danta1ion
+	Attributes.MooaEncodedAttribute0 = Traverse(OldMaterial.GetEditorOnlyData()->MooaEncodedAttribute0);
+	Attributes.MooaEncodedAttribute1 = Traverse(OldMaterial.GetEditorOnlyData()->MooaEncodedAttribute1);
+	Attributes.MooaEncodedAttribute2 = Traverse(OldMaterial.GetEditorOnlyData()->MooaEncodedAttribute2);
+	Attributes.MooaEncodedAttribute3 = Traverse(OldMaterial.GetEditorOnlyData()->MooaEncodedAttribute3);
+	Attributes.MooaEncodedAttribute4 = Traverse(OldMaterial.GetEditorOnlyData()->MooaEncodedAttribute4);
+	// End MooaToon changes
 
 	for (int32 Index = 0; Index < 8; Index++)
 	{
